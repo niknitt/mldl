@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKHIL</title>
+  <link rel="stylesheet" href="style.css">
+
+
+
+
+
+  
+
+<style>    
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(14 12 21);
+    font-family: monospace;
+    color: lightgrey;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+header{
+    position: absolute;
+    top: 0;
+    left :0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+  border: 0.5px solid rgba(110, 101, 114,0.5);
+z-index: 999;
+
+}
+
+.head-left{
+    display: flex;
+    align-items: center;
+}
+.head-left img{
+    height: 45px;
+    margin-right: 15px;
+  
+
+}
+header ul{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+
+}
+header ul li{
+    list-style: none;
+
+}
+header ul li a{
+    text-decoration: none;
+    color: gray;
+    font-weight: 900;
+    font-size: 15px;
+    transition: 0.3s;
+}
+header a:hover{
+    color: lightgray;
+    text-shadow: 0 0 15px rgba(255,255,255,0.352);
+
+}
+.head-right{
+    display:flex;
+    align-items: center;
+
+}
+.button-box{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin-left: 25px;
+    background: linear-gradient(to right, #00aaa7,#7f42a7 , #6600c5, #1f2b9c,#2a46ff,#0099ff,#00aaa7 );
+    border-radius: 10px;
+    background-size: 200%;
+    animation: animationGradient 2.5s linear infinite ;
+    clip-path: polygon(0% 0%, 87% 0, 100% 34%, 100% 80%, 100% 99%, 0% 100%, 0% 80%, 0% 20%);
+    
+}
+.head-right button{
+    position: absolute;
+    inset: 3px 3px 3px 3px;
+    border: none;
+    background-color: rgba(14 12 21);
+    color: lightgrey;
+    border-radius: 10px;
+    clip-path: polygon(0% 0%, 87% 0, 100% 34%, 100% 80%, 100% 99%, 0% 100%, 0% 80%, 0% 20%);
+    cursor: pointer;
+    transition: 0.3;
+
+}
+
+.head-right button:hover{
+    color:#7e00d2;
+}
+
+.hero{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 150vh;
+    overflow: hidden;
+
+}
+
+.hero-blur-image{
+    position: absolute;
+    width: 100%;
+    top:-15%;
+
+}
+.hero-rings-image{
+    position: absolute;
+    height: 90%;
+    top:90px;
+    opacity: 0.4;
+    
+}
+.hero-icons-image{
+    width: 100%;
+    position: absolute;
+    top: 8%;
+}
+
+.hero h1{
+    position: absolute;
+    top: 10%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 35px;
+    max-width: 1000px;
+    text-align: center;
+    color: white;
+}
+
+.hero h3{
+    position: absolute;
+    top: 23%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    max-width: 700 px;
+    text-align: center;
+    color: white;
+}
+
+.hero button{
+    position: absolute;
+    top: 30%;
+    border: none;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    clip-path: polygon(0% 0%, 87% 0, 100% 34%, 100% 80%, 100% 99%, 0% 100%, 0% 80%, 0% 20%);
+   transition: 0.3s;
+}
+
+.hero button:hover{
+    opacity: 0.7;
+    color: #7e00d2;
+}
+
+.hero-image-box{
+    margin-top: 250px;
+    position: relative;
+    width: 1000px;
+    height: 550px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: linear-gradient(to right, #00aaa7,#7f42a7 , #6600c5, #1f2b9c,#2a46ff,#0099ff,#00aaa7 );
+    background-size: 200%;
+    animation: animationGradient 2.5s linear infinite ;
+
+
+}
+.hero-image-box .robot-box{
+    width:98.5%;
+    height: 98%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50px;
+
+}
+
+.hero-image-box .robot-box img{
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: hard-light;
+
+}
+
+.hero-image-box .robot-box .robot-header{
+    height: 30px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.hero-image-box .element1{
+    position: absolute;
+    top: 25%;
+    right: -16%;
+    backdrop-filter: blur(10px);
+    width: 25%;
+    border-radius: 15px;
+}
+
+.hero-image-box .element1 img{
+  
+    width: 100%;
+    border-radius: 15px;
+    box-shadow:0 0 15px rgba(255, 255, 255, 0.432) ;
+
+}
+
+.hero-image-box .element2{
+    position: absolute;
+    top: 45%;
+    left: -14%;
+    backdrop-filter: blur(10px);
+    width: 25%;
+    border-radius: 15px;
+}
+
+.hero-image-box .element2 img{
+    width: 100%;
+    border-radius: 15px;
+    box-shadow:0 0 15px rgba(255, 255, 255, 0.432) ;
+
+}
+
+.parallax{
+    transition: transform 1s linear;
+}
+
+.hero h4{
+    position: absolute;
+    bottom: 9%;
+    color: gray;
+
+}
+.companies-list{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: -2%;
+    width: 100%;
+}
+
+
+.companies-list .company{
+    display: flex;
+    align-items: center;
+
+
+}
+.companies-list .company img{
+    height: 50px;
+    margin-right: 10px;
+}
+
+.companies-list .company p{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@media screen and (max-width:1000px){
+    header{
+        padding: 10px 10px;
+    }
+    header ul{
+        min-width: 300px;
+    }
+    .head-right a{
+        margin-right: -20px;
+    }
+    .hero h1{
+        font-size: 30px;
+    }
+    .hero-image-box{
+        height: 450px;
+    }
+    .hero-image-box .element1{
+         right:5% ;
+         top: -12%;
+    }
+    .hero-image-box .element2{
+        left: 5%;
+        top: 95%;
+    }
+    .companies-list .company img{
+        height: 35px;
+    }
+    .companies-list .company  p{
+        font-size: 20px;
+    }
+    
+
+}
+@media screen and (max-width: 700px) {
+       header ul{
+        display: none;
+       }
+       .hero h1{
+        top: 6%;
+       }
+       .hero h3{
+        font-size: 15px;
+        max-width: 350px;
+        line-height: 22px;
+       }
+       .hero button{
+        top: 32%;
+       }
+       .hero-image-box{
+        height: 250px;
+       }
+       .hero-image-box .element1{
+        width: 140px;
+        height: 50px;
+        top: -15%;
+       }
+       .hero-image-box .element2{
+        width: 140px;
+        height: 50px;
+       }
+       .hero h4{
+        bottom: 18%;
+       }
+       .companies-list{
+        flex-wrap: wrap;
+        max-width: 400px;
+       }
+
+}
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+
+
+
+
+<body>
+    <div class="container">
+        <header>
+            <div class="head-left">
+                <img src="logo.png">
+                <h1>PM2.5</h1>
+            </div>
+
+            <ul>
+                <li><a href="#"> ATTRIBUTES</a></li>
+                <li><a href="#">PRICING</a></li>
+                <li><a href="#">HOW TO USE</a></li>
+                <li><a href="#">ROADMAP</a></li>
+               
+            </ul>
+
+       
+
+        </header>
+        <section class="hero">
+            <img  class="hero-blur-image"    src="hero blur img.png" alt="">
+            <img  class="hero-icons-image parallax" data-speed="4"  src="hero icons img.png" alt="">
+            <img   class="hero-rings-image" src="hero rings img.png" alt="">
+
+            <h1>"World has achieved intelligence without wisdom, 
+            ours is a world of nuclear giants and ethical infants"
+            </h1>
+            <button>Get Started</button>
+
+            <div class="hero-image-box">
+                <div class="robot-box">
+                <div class="robot-header"></div>
+                <img src="robot1.png" alt="">
+                </div>
+                <div class="element1">
+                   
+                </div>
+                <div class="element2">
+                
+                </div>
+            </div>
+
+            <h4>Helping people create beautiful content at NIKHIL$MANISH</h4>
+            <div class="companies-list">
+                <div class="company">
+                    <img src="company1.png" alt="">
+                    <p>Looda</p>
+                </div>
+
+                <div class="company">
+                    <img src="company2.png" alt="">
+                    <p>Aand</p>
+                </div>
+
+                <div class="company">
+                    <img src="company3.png" alt="">
+                    <p>Land</p>
+                </div>
+
+                <div class="company">
+                    <img src="company4.png" alt="">
+                    <p>Jhaat</p>
+                </div>
+
+                <div class="company">
+                    <img src="company5.png" alt="">
+                    <p>Laasan</p>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+    
+
+
+
+
+
+
+
+   <script>
+    document.addEventListener("mousemove",(event)=>{
+        const x=event.clientX / window.innerWidth - 0.5;
+        const y=event.clientY / window.innerWidth - 0.5;
+
+        document.querySelectorAll(".parallax").forEach((element)=>{
+            const speed = element.getAttribute("data-speed");
+            element.style.transform=`translate(${x*speed*20}px , ${y*speed*20}px)`;
+
+        })
+
+    })
+   </script>
+</body>
+</html>
